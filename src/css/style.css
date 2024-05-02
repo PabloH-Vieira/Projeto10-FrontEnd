@@ -12,8 +12,6 @@ nav{
     height: 50px;
     background: #000;
     font-family: "Roboto",sans-serif;
-    display: flex;
-    justify-content: center;
 }
 nav ul{
     list-style: none;
@@ -67,7 +65,6 @@ label[for="bt-menu"]{
     cursor: pointer;
     width: 50px;
     height: 50px;
-
 }
 
 #bt-menu{
@@ -76,4 +73,41 @@ label[for="bt-menu"]{
 
 label[for="bt-menu"]{
     display: none;
+}
+
+section{
+    height: 100vh;
+    width: 100%;
+}
+
+@media (max-width: 800px){
+    nav ul li{
+        width: 100%;
+        float: none;
+    }
+    nav ul ul{
+        position: static;
+        overflow: hidden;
+        max-height: 0;
+        transition: all 0.5s;
+    }
+
+    nav ul li:hover ul{
+        height: auto;
+        max-height: 200px;
+    }
+
+    label[for="bt-menu"]{
+        display: block;
+        width: 100%;
+        height: 30px;
+    }
+
+    #bt-menu:checked ~ nav{
+        margin-left: 0;
+    }
+    nav{
+        margin-left: -100%;
+        transition:  all 0.5s;
+    }
 }
